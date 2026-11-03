@@ -21,17 +21,7 @@ public class MethodsServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
-		//TODO: Log: Apagar no final
-		String action = req.getRequestURI();
-		System.out.println("URL: " + action);
 		
-		switch(action) {
-		
-			
-		default:
-			String message = "URL não suportada: " + action +".";
-			throw new IllegalArgumentException(message);
-		}
 	}
 	
 
