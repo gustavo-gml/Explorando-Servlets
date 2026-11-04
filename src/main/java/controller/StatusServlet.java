@@ -22,7 +22,7 @@ public class StatusServlet extends HttpServlet{
 			throws ServletException, IOException {
 		
 		 String r = req.getServletPath(); //pega sem a root
-		 String codigo = req.getParameter("codigo");
+		 String codigo = req.getParameter("code");
 		 String result = r + "/" + codigo;
 		 switch(result)
 		 {
