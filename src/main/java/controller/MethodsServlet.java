@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
@@ -18,11 +19,23 @@ import jakarta.servlet.http.HttpServletResponse;
 public class MethodsServlet extends HttpServlet{
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+	protected void doOptions(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		
+		  resp.setHeader("Allow", "GET, POST, OPTIONS");
+		 resp.setStatus(HttpServletResponse.SC_OK);
+		 resp.getWriter().write("Metodos Suportados: Allow, GET, POST, OPTIONS");
 		
 	}
+	
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+			throws ServletException, IOException {
+			
+		resp.sendRedirect("index.html?executar=true");
+			
+		}
+	
 	
 
 	
