@@ -78,7 +78,9 @@ Pelo navegador:
 
 1. Clique em **Realizar Login**.
 2. Clique em **Entrar** e veja a mensagem de boas-vindas.
-3. Para comparar, teste o **Entrar** em um navegador novo (ou aba anônima), sem ter feito login.
+3. Para comparar, teste o **Entrar** sem ter feito login.
+
+> Nota: Após realizar login e clicar em entrar, um logout ocorre automaticamente.
 
 Pelo terminal, guardando e reenviando os cookies:
 
@@ -108,7 +110,7 @@ No navegador, repare em como cada código é exibido. A aba *Network* do F12 mos
 
 O navegador só envia GET e POST por links e formulários, então o OPTIONS precisa ser enviado de outra forma.
 
-**Pela página inicial:** o link **Methods** faz uma requisição `OPTIONS` com `fetch` e mostra o resultado na tela.
+**Pela página inicial:** o link **Methods** faz uma requisição `OPTIONS` com `fetch` e mostra o resultado na tela com um alert.
 
 **Pelo terminal:**
 
@@ -123,10 +125,10 @@ HTTP/1.1 200
 Allow: GET, POST, OPTIONS
 ```
 
-**Pelo console do navegador (F12):**
+**Navegador:**
 
 ```js
-fetch('methods', {method: 'OPTIONS'}).then(r => console.log(r.headers.get('Allow')))
+fetch('methods', {method: 'OPTIONS'}).then(r => alert(r.headers.get('Allow')))
 ```
 
 ## Conceitos de HTTP explorados
